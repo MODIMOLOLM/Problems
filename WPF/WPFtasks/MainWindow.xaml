@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="КУПИ ПОДПИСКУ НА МОЙ КАНАЛ" >
+            <!--
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Style.Setters>
@@ -26,6 +27,7 @@
                     </Style.Triggers>
                 </Style>
             </Button.Style>
+            -->
         </Button>
     </Grid>
 </Window>
