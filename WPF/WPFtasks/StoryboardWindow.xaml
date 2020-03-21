@@ -11,17 +11,31 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-      
-        <Button Name="b"
-        Height="20">
-            Типа реклама улезает по нажатию
+        <!--
+        <Button x:Name="b">
+            реклама шотатам делает
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="b" Storyboard.TargetProperty="Height"
+                                             From="20" To="450" Duration="0:0:0.5"
+                                             >
+                                
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        -->
+        <Button x:Name="b" Grid.Row="1" Background="Aqua">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="b"
-                  Storyboard.TargetProperty="Height"
-                  From="20" To="0" Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetName="b" Storyboard.TargetProperty="Opacity" 
+                                             From="1.0" To="0.0" Duration="0:0:2" AutoReverse="True" RepeatBehavior="Forever"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
