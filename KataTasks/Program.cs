@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace KataTasks
 {
@@ -136,8 +134,7 @@ namespace KataTasks
                     bb = i;
                 }
             }
-            if (a == 1) return aa + 1;
-            else return bb + 1;
+            return (a == 1 ? aa : bb) + 1;
 
 
 
