@@ -98,8 +98,8 @@ namespace KataTasks
         }
         public static bool Narcissistic(int value)
         {
-            int l = Convert.ToString(value).Length;
             string num = Convert.ToString(value);
+            int l = num.Length;
             int ans = 0;
             for (int i = 0; i < l; i++)
             {
@@ -135,9 +135,30 @@ namespace KataTasks
                 }
             }
             return (a == 1 ? aa : bb) + 1;
+            
 
 
+        }
+                public static string Likes(string[] name)
+        {
+            if (name.Length == 0) return "no one likes this";
+            if (name.Length == 1) return name[0] + " likes this";
+            if (name.Length == 2) return name[0] + " and " + name[1] + " like this";
+            if (name.Length == 3) return name[0] + ", " + name[1] + " and " + name[2] + " like this";
+            if (name.Length > 3) return name[0] + ", " + name[1] + " and " + (name.Length - 2) + " others like this";
+            return "no one likes this";
+        }
 
+                public static string PigIt(string str)
+        {
+            string ans = "";
+            string[] words = str.Split(' ');
+            for(int i=0;i<words.Length;i++)
+            {
+                ans = ans + words[i].Remove(0, 1) + words[i][0] + "ay ";
+            }
+            ans = ans.Remove(ans.Length - 1, 1);
+            return ans;
         }
     }
 }

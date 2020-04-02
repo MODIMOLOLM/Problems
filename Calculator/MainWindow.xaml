@@ -5,10 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="400">
+        Title="MainWindow" Height="500" Width="400">
     <Grid Background="LightGray">
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="t"
+                TextAlignment="Left" FontSize="50" Grid.Row="0" Background="Gray" Foreground="LightGray" Grid.Column="1">
+
+            </TextBlock>
+            <Button FontSize="50" Background="Gray" Foreground="LightGray">
+                C
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            
+        <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -20,58 +38,60 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock TextAlignment="Left" FontSize="50" Grid.Row="0" Background="Gray" Foreground="LightGray" Grid.ColumnSpan="4">
-            C
-        </TextBlock>
-        <Button Grid.Column="0" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40">
-            1
+
+        <Button Grid.Column="0" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40" Content="1">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        
+                    </EventTrigger>
+                </Button.Triggers>
         </Button>
-        <Button Grid.Column="1" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="1" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40">
             2
         </Button>
-        <Button Grid.Column="2" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="2" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40">
             3
         </Button>
-        <Button Grid.Column="0" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="0" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40">
             4
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="1" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40">
             5
         </Button>
-        <Button Grid.Column="2" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="2" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40">
             6
         </Button>
-        <Button Grid.Column="0" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="0" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40">
             7
         </Button>
-        <Button Grid.Column="1" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="1" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40">
             8
         </Button>
-        <Button Grid.Column="2" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="2" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40">
             9
         </Button>
-        <Button Grid.Column="0" Grid.Row="4" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="0" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40">
             .
         </Button>
-        <Button Grid.Column="1" Grid.Row="4" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="1" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40">
             0
         </Button>
-        <Button Grid.Column="2" Grid.Row="4" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="2" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40">
             =
         </Button>
-        <Button Grid.Column="3" Grid.Row="4" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="3" Margin="10" Background="Orange" FontSize="40">
             *
         </Button>
-        <Button Grid.Column="3" Grid.Row="3" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="2" Margin="10" Background="Orange" FontSize="40">
             /
         </Button>
-        <Button Grid.Column="3" Grid.Row="1" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="0" Margin="10" Background="Orange" FontSize="40">
             +
         </Button>
-        <Button Grid.Column="3" Grid.Row="2" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="1" Margin="10" Background="Orange" FontSize="40">
             -
         </Button>
 
-
-    </Grid>
+            </Grid>
+        </Grid>
 </Window>
