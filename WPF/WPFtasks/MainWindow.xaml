@@ -7,25 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="200" x:Name="h"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Button Grid.Column="1" Grid.Row="1">
+
+        <Button  x:Name="b">
             A Button
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="h"
-                                Storyboard.TargetProperty="Height"
-                                From="200" To="50" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetName="b"
+                                Storyboard.TargetProperty="Margin"
+                                From="0" To="50" Duration="0:0:1" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

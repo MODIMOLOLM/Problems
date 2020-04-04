@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fully useless tasks", "Fully useless tasks.csproj", "{D467391B-5F58-4994-967D-6E935CB67FBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D467391B-5F58-4994-967D-6E935CB67FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D467391B-5F58-4994-967D-6E935CB67FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D467391B-5F58-4994-967D-6E935CB67FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D467391B-5F58-4994-967D-6E935CB67FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02E43CE0-8D7E-4289-B90D-6457782559A0}
+	EndGlobalSection
+EndGlobal
