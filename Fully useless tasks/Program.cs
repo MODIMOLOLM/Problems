@@ -10,7 +10,8 @@ namespace Fully_useless_tasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(StrSplit("one two three omgog lol funny",' '));
+            string[] a = StrSplit("one two three omgog lol funny two", ' ');
+            Console.WriteLine(StrJoin(a));
         }
         public static bool IsSubString(string full, string sub)
         {
@@ -20,6 +21,7 @@ namespace Fully_useless_tasks
                 for (int j = 0; j < sub.Length; j++) 
                 {
                     if (full[i + j] == sub[j]) q++;
+                    else break;
                 }
                 if (q >= sub.Length) return true;
                 q = 0;
@@ -27,59 +29,53 @@ namespace Fully_useless_tasks
             return false;
         }
 
-        public static string FindSubstr(string full, string sub)
+        public static int[] FindSubstr(string full, string sub)
         {
+            List<int> ans = new List<int>();
             int q = 0;
             for(int i=0;i-1<full.Length-sub.Length;i++)
             {
+                
                 for (int j = 0; j < sub.Length; j++) 
                 {
                     if (full[i + j] == sub[j]) q++;
+                    else break;
                 }
                 if (q >= sub.Length)
                 {                             
-                Console.WriteLine(i+1);
+                ans.Add(i);
                 }
                 q = 0;
             }
-            return "";
+            return ans.ToArray();
         }
         public static string[] StrSplit(string full, char c)
         {
-            int q=1;
+            int start = 0;
+            int finish = 0;
+            List<string> ans = new List<string>();
             for(int i=0;i<full.Length;i++)
             {
                 if(full[i]==c)
                 {
-                    q++;
+                    finish = i;
+                    ans.Add(full.Substring(start, finish-start));
+                    start = finish+1;
                 }
             }
-            string[] ans=new string[q];
-            int t=0;
-            int u=0;
-            string s =full;
-            for(int i=0;i<s.Length;i++)
-            {
-                if(s[i]==c)
-                {
-                    ans[t]=s.Remove(0,u);
-                    t++;
-                    Console.WriteLine(s.Remove(0,u));
-                    s.Remove(0,u);
-                    u=i;
-                }
-            }
-            return ans;
+            return ans.ToArray();
         }
 
         public static string StrJoin(string[] full)
         {
-            string ans="";
+            StringBuilder ans=new StringBuilder();
             for(int i=0;i<full.Length;i++)
             {
-                ans=ans+full[i];
+                ans.Append(full[i]);
+                ans.Append(" ");
             }
-            return ans.Remove(ans.Length-1);
+            ans.Remove(ans.Length - 1,1);
+            return ans.ToString();
         }
     }
 }
