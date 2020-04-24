@@ -29,7 +29,15 @@ namespace Login
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
             bool k = false;
-            for(int i=0;i<2;i++)
+            for (int i = 0; i < 2; i++)
+            {
+                if (email.Text == gcloud[i, 0])
+                {
+                    b.Content = "done!";
+                    k = true;
+                }
+            }
+            for (int i=0;i<2;i++)
             {
                 if(email.Text==gcloud[i,0]&&password.Text==gcloud[i,1])
                 {

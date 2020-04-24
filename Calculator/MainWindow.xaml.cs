@@ -23,6 +23,7 @@ namespace Calculator
         private double number1;
         private double number2;
         private bool q = false;
+        private bool qq = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -57,11 +58,32 @@ namespace Calculator
             tt.Text = t.Text + " " + b.Content;
             t.Text = "";
             q = false;
+            qq = false;
         }
 
         private void Equals(object sender, RoutedEventArgs e)
         {
+            if (qq) return;
+            number2 = Convert.ToDouble(t.Text);
+            switch(tt.Text[tt.Text.Length - 1])
+            {
+                case '+':
+                    t.Text = (number1 + number2).ToString();
+                    break;
+                case '-':
+                    t.Text = (number1 - number2).ToString();
+                    break;
+                case '*':
+                    t.Text = (number1 * number2).ToString();
+                    break;
+                case '/':
+                    t.Text = (number1 / number2).ToString();
+                    break;
 
+
+            }
+            tt.Text += " " + number2 + " =";
+            qq = true;
         }
     }
 }
