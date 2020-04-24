@@ -16,11 +16,17 @@
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="t"
-                TextAlignment="Left" FontSize="50" Grid.Row="0" Background="Gray" Foreground="LightGray" Grid.Column="1">
+           <!-- <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Auto">-->
+                <TextBlock x:Name="t"
+                TextAlignment="Left" FontSize="30" Grid.Row="0" Background="Gray" Foreground="LightGray" Grid.Column="1" Margin="0,25,0,0">
+                    
+                </TextBlock>
+           <!-- </ScrollViewer>-->
+            <TextBlock x:Name="tt"
+                TextAlignment="Left" FontSize="20" Grid.Row="0" Background="Gray" Foreground="LightGray" Grid.Column="1" Margin="0,0,0,55">
 
             </TextBlock>
-            <Button FontSize="50" Background="Gray" Foreground="LightGray" Click="Button_Click_1">
+            <Button FontSize="50" Background="Gray" Foreground="LightGray" Click="ClearButtonClick">
                 C
             </Button>
         </Grid>
@@ -39,52 +45,52 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+        <Button Grid.Column="0" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             1 
         </Button>
-            <Button Grid.Column="1" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="1" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             2
         </Button>
-            <Button Grid.Column="2" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="2" Grid.Row="0" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             3
         </Button>
-            <Button Grid.Column="0" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="0" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             4
         </Button>
-            <Button Grid.Column="1" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="1" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             5
         </Button>
-            <Button Grid.Column="2" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="2" Grid.Row="1" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             6
         </Button>
-            <Button Grid.Column="0" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="0" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             7
         </Button>
-            <Button Grid.Column="1" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="1" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             8
         </Button>
-            <Button Grid.Column="2" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="2" Grid.Row="2" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             9
         </Button>
-            <Button Grid.Column="0" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="0" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40" Click="DotButtonClick">
             .
         </Button>
-            <Button Grid.Column="1" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40" Click="Button_Click">
+            <Button Grid.Column="1" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40" Click="DefaultButtonClick">
             0
         </Button>
-        <Button Grid.Column="2" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40">
+        <Button Grid.Column="2" Grid.Row="3" Margin="10" Background="DarkGray" FontSize="40" Click="Equals">
             =
         </Button>
-        <Button Grid.Column="3" Grid.Row="3" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="3" Margin="10" Background="Orange" FontSize="40" Click="Task">
             *
         </Button>
-        <Button Grid.Column="3" Grid.Row="2" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="2" Margin="10" Background="Orange" FontSize="40" Click="Task">
             /
         </Button>
-        <Button Grid.Column="3" Grid.Row="0" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="0" Margin="10" Background="Orange" FontSize="40" Click="Task">
             +
         </Button>
-        <Button Grid.Column="3" Grid.Row="1" Margin="10" Background="Orange" FontSize="40">
+        <Button Grid.Column="3" Grid.Row="1" Margin="10" Background="Orange" FontSize="40" Click="Task">
             -
         </Button>
 

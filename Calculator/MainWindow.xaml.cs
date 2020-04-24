@@ -20,20 +20,48 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double number1;
+        private double number2;
+        private bool q = false;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DefaultButtonClick(object sender, RoutedEventArgs e)
         {
             Button b = (Button)sender;
             t.Text += b.Content;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ClearButtonClick(object sender, RoutedEventArgs e)
         {
             t.Text = "";
+            q = false;
+        }
+
+        private void DotButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (!q && t.Text != "")
+            {
+                t.Text += ".";
+                q = true;
+            }
+
+        }
+
+        private void Task(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            number1 = Convert.ToDouble(t.Text);
+            tt.Text = t.Text + " " + b.Content;
+            t.Text = "";
+            q = false;
+        }
+
+        private void Equals(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
