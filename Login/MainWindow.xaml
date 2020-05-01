@@ -13,6 +13,8 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock FontSize="20" HorizontalAlignment="Center" Grid.Row="0">
             email
@@ -23,11 +25,16 @@
         <TextBlock FontSize="20" HorizontalAlignment="Center" Grid.Row="2">
             password
         </TextBlock>
-        <TextBox Grid.Row="3" Background="AliceBlue" Margin="5" FontSize="20" VerticalAlignment="Center" x:Name="password">
+        <TextBox Grid.Row="3" Background="AliceBlue" Margin="5" FontSize="20" VerticalAlignment="Center" x:Name="password" >
 
         </TextBox>
         <Button Grid.Row="4" Margin="5" Background="CadetBlue" FontSize="25" Click="ButtonClick" x:Name="b">
             sign in
+        </Button>
+        <TextBlock FontSize="20" HorizontalAlignment="Center" Grid.Row="5" x:Name="info">
+        </TextBlock>
+        <Button Grid.Row="6" Margin="300,10,0,0" Background="AliceBlue" Click="Registr" Name="reg">
+            registration
         </Button>
     </Grid>
 </Window>

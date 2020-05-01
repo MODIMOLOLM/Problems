@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+
 
 namespace Login
 {
@@ -20,7 +22,7 @@ namespace Login
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string[,] gcloud= { { "m@gmail.com", "lolfunnypassword" }, { "sanis@gmail.com","oMMgH" } };
+        private bool r = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,24 +30,44 @@ namespace Login
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
-            bool k = false;
-            for (int i = 0; i < 2; i++)
+            if (!r)
             {
-                if (email.Text == gcloud[i, 0])
+                string pname = email.Text;
+                string pplus = @"C:\Logins\";
+
+                if (Directory.Exists(pplus + pname))
                 {
-                    b.Content = "done!";
-                    k = true;
+
+                    if ("i" == password.Text)
+                    {
+                        info.Text = "Signed in as " + email.Text;
+                    }
+                    else
+                    {
+                        info.Text = "Wrong password";
+                    }
+                }
+                else
+                {
+                    info.Text = "This email is not registered";
                 }
             }
-            for (int i=0;i<2;i++)
+            else
             {
-                if(email.Text==gcloud[i,0]&&password.Text==gcloud[i,1])
-                {
-                    b.Content = "done!";
-                    k=true;
-                }
+                string pname = email.Text;
+                string pplus = @"C:\Logins\";
+                Directory.CreateDirectory(pname + pplus);
+                File.WriteAllText(pname + pplus + @"\password.txt",password.Text);
             }
-            if (!k) b.Content = "wrong email or password";
+
+        }
+
+        private void Registr(object sender, RoutedEventArgs e)
+        {
+            reg.IsEnabled = false;
+            reg.Content = "registrating";
+            b.Content = "register";
+            r = true;
         }
     }
 }
