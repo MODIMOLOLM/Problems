@@ -22,6 +22,9 @@ namespace Login
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool IsEmailEmpty=true;
+        bool IsPasswordEmpty=true;
+
         private bool r = false;
         public MainWindow()
         {
@@ -30,21 +33,29 @@ namespace Login
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
+            string pname = email.Text;
+            string pplus = @"C:\Logins\";
             if (!r)
             {
-                string pname = email.Text;
-                string pplus = @"C:\Logins\";
 
                 if (Directory.Exists(pplus + pname))
                 {
 
-                    if ("i" == password.Text)
+                    using (StreamReader sr = new StreamReader(pplus+pname+@"\password.txt", System.Text.Encoding.Default))
                     {
-                        info.Text = "Signed in as " + email.Text;
-                    }
-                    else
-                    {
-                        info.Text = "Wrong password";
+                        string line;
+                        line = sr.ReadLine();
+                        {
+                            Console.WriteLine(line);
+                        }
+                        if (line == password.Text)
+                        {
+                            info.Text = "Signed in as " + email.Text;
+                        }
+                        else
+                        {
+                            info.Text = "Wrong password";
+                        }
                     }
                 }
                 else
@@ -54,10 +65,20 @@ namespace Login
             }
             else
             {
-                string pname = email.Text;
-                string pplus = @"C:\Logins\";
-                Directory.CreateDirectory(pname + pplus);
-                File.WriteAllText(pname + pplus + @"\password.txt",password.Text);
+                if(Directory.Exists(pplus + pname))
+                {
+                    info.Text = "This email is already registered";
+                }
+                else
+                {
+                    if (email.Text.Contains("@gmail.com"))
+                    {
+                        Directory.CreateDirectory(pplus + pname);
+                        File.WriteAllText(pplus + pname + @"\password.txt", password.Text);
+                        info.Text = "Succesfully registered, signed in as " + pname;
+                    }
+                    else info.Text = "This is wrong email point";
+                }
             }
 
         }
@@ -68,6 +89,23 @@ namespace Login
             reg.Content = "registrating";
             b.Content = "register";
             r = true;
+            info.Text = "";
+        }
+
+        private void email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (email.Text.Length > 0) IsEmailEmpty = false;
+            else IsEmailEmpty = true;
+            if (IsEmailEmpty == false && IsPasswordEmpty == false) b.IsEnabled = true;
+            else b.IsEnabled = false;
+        }
+
+        private void password_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (password.Text.Length > 0) IsPasswordEmpty = false;
+            else IsPasswordEmpty = true;
+            if (IsEmailEmpty == false && IsPasswordEmpty == false) b.IsEnabled = true;
+            else b.IsEnabled = false;
         }
     }
 }
