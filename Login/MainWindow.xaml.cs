@@ -50,7 +50,9 @@ namespace Login
                         }
                         if (line == password.Text)
                         {
-                            info.Text = "Signed in as " + email.Text;
+                            Window1 w = new Window1(email.Text);
+                            w.Show();
+                            this.Close();
                         }
                         else
                         {
@@ -71,11 +73,23 @@ namespace Login
                 }
                 else
                 {
-                    if (email.Text.Contains("@gmail.com"))
+                    bool condition = false;
+                    try 
+                    {
+                        condition = email.Text.Remove(0, email.Text.Length - 10) == "@gmail.com";
+                    }
+
+                    catch (Exception ex)
+                    {
+                    MessageBox.Show("email lenth can not be less than 11 symbols");
+                    }
+                    if (condition && email.Text.Length>10)
                     {
                         Directory.CreateDirectory(pplus + pname);
                         File.WriteAllText(pplus + pname + @"\password.txt", password.Text);
-                        info.Text = "Succesfully registered, signed in as " + pname;
+                        Window1 w = new Window1(email.Text);
+                        w.Show();
+                        this.Close();
                     }
                     else info.Text = "This is wrong email point";
                 }
